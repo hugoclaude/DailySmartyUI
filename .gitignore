@@ -1,1 +1,8 @@
-node_modules
+# nodejs
+node_modules/
+npm-debug.log
+yearn-error.log
+
+# project
+dist/
+env.js
