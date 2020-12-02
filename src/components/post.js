@@ -4,7 +4,7 @@ class Post extends Component {
     renderTopics() {
         let topics = this.props.associated_topics.map((topic, index) => {
             return (
-                <span className="post_topic" key={index}>
+                <span className="post-topic" key={index}>
                     {topic}
                 </span>
             );
@@ -16,9 +16,7 @@ class Post extends Component {
         return (
             <li className="recent-post">
                 <div className="recent-post__title">{this.props.title}</div>
-                <div className="recent-post__topics">
-                    {this.renderTopics()}
-                </div>
+                <div className="recent-post__topics">{this.renderTopics()}</div>
             </li>
         );
     }
