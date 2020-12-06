@@ -1,6 +1,14 @@
 import React, { Component } from "react";
+import AnimateHeight from "react-animate-height";
 
 class Post extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            height: 0,
+        };
+    }
     renderTopics() {
         let topics = this.props.associated_topics.map((topic, index) => {
             return (
@@ -18,11 +26,13 @@ class Post extends Component {
                 <div className="post-link" key={index}>
                     <div className="post-link__box"></div>
                     <div className="post-link__link">
-                        <a href={post_link.link_url}>Useful link #{index + 1}</a>
+                        <a href={post_link.link_url}>
+                            Useful link #{index + 1}
+                        </a>
                     </div>
                 </div>
-            )
-        })
+            );
+        });
         return links;
     }
 
@@ -42,10 +52,20 @@ class Post extends Component {
                     <div className="result-post__topics">
                         {this.renderTopics()}
                     </div>
-                    <div className="result-post__title">{this.props.title}</div>
-                    <div className="result-post__links">
-                        {this.renderLinks()}
+                    <div className="result-post__title">
+                        <a
+                            href={this.props.link}
+                            onMouseEnter={() => this.setState({ height: 70 })}
+                            onMouseLeave={() => this.setState({ height: 0 })}
+                        >
+                            {this.props.title}
+                        </a>
                     </div>
+                    <AnimateHeight duration={500} height={this.state.height}>
+                        <div className="result-post__links">
+                            {this.renderLinks()}
+                        </div>
+                    </AnimateHeight>
                 </li>
             );
         }
