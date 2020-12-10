@@ -14,13 +14,15 @@
             border: none;
             border-radius: 5px;
     
-            height: 80 px;
+            height: 80px;
             font-size: 36px;
     
             transition: all .2s ease;
     
             &::placeholder {
                 color: $color-gray-two;
+                font-family: 'Font Awesome\ 5 Free', 'Lato', Arial, Helvetica, sans-serif;
+                font-weight: 600;
             }
     
             &:focus {
