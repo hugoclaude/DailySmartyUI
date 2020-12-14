@@ -28,6 +28,12 @@ $color-gray-two: #b3b3b3;
 $color-gray-three: #D8D8D8;
 $color-blue-one: #0079FF;
 
+.no-content {
+    color: $color-gray-one;
+    font-size: 14px;
+    font-size: 17px;
+}
+
 @import './mixins.scss';
 @import "./searchBar";
 @import "./recentPosts.scss";
